@@ -1,5 +1,5 @@
 /* App.js */
-angular.module('spartaApp', ['ngRoute','ngAnimate', 'ui.bootstrap'])
+angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider

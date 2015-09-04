@@ -1,10 +1,9 @@
-Deck Master (MTG)
-=================
-#####http://www.deckmaster.net
+Spartan Gym customers app
+=========================
 <br/>
 ### Clone our repo
 ```bash
-$ git clone git@github.com:calamarico/deck-master.git
+$ git clone git@github.com:calamarico/spartan-gym.git
 ```
 
 ### Install dependencies
@@ -33,4 +32,4 @@ Waiting...
 ```
 
 
-By @kalamarico & @Acido69
+By @kalamarico

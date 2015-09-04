@@ -1,0 +1,68 @@
+/**
+ * Styles global file
+ */
+@import "./variables.less";
+
+body {
+}
+
+h2 {
+  color: black;
+  font-family: "OpenSans";
+  text-align: center;
+}
+
+.main {
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+
+  > .users-area {
+    height: 400px;
+    width: 100%;
+    
+    > ul {
+      width: 90%;
+      margin: auto auto;
+      border: black solid 2px;
+
+      > li {
+        cursor: pointer;
+        height: 29px;
+        list-style: none;
+        color: red;
+        font-family: "OpenSans";
+        font-size: 14px;
+      }
+    }
+
+    > span {
+      cursor: pointer;
+      display: inherit;
+      font-size: 24px;
+      font-family: "OpenSans";
+      color: red;
+      text-align: center;
+    }
+  }
+
+  > .new-area {
+    width: 100%;
+  }
+}
+
+.modal-window {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url('@{font-path}OpenSans-Regular-webfont.woff') format('woff'), url('@{font-path}OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Stalemate";
+  src: url('@{font-path}Stalemate-Regular.ttf') format('truetype');
+}

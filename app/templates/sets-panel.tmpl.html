@@ -1,0 +1,15 @@
+<ul class="sets">
+  <li data-ng-repeat="set in sets"
+      class="set" data-ng-click="setSelectedSet($index)">
+    <p class="year" data-ng-bind="set.fullYear"></p>
+    <span class="counter"
+        data-ng-bind="set.sets.length">
+    </span>
+    <div data-ng-repeat="item in set.sets"
+        class="item"
+        data-ng-show="set.isSelected"
+        data-ng-click="setMainSelectedSet($event, item)">
+      <p class="name" data-ng-bind="item.name"></p>
+    </div>
+  </li>
+</ul>

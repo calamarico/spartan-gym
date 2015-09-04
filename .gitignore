@@ -1,0 +1,31 @@
+# ----------------------------
+# ---      GIT ignore      ---
+# ----------------------------
+
+# Untracked general purpose files:
+.project
+.settings
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.bck
+*.orig
+/npm-debug.log
+
+# Untracked tmp files
+# For Mac
+.DS_Store
+
+# Untracked general purpose directories:
+doc
+jsdoc
+publish
+tmp
+temp
+/node_modules
+/app/styles/css
+/build

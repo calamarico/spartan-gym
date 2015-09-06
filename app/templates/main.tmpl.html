@@ -1,6 +1,11 @@
 <div class="main">
+  <div class="logo">
+    <div></div>
+  </div>
   <div class="users-area">
-    <h2>Usuarios</h2>
+    <div class="title">
+      <h2>Usuarios</h2>
+    </div>
     <ul>
       <li data-ng-repeat="customer in $root.customers | limitTo: $root.limitUsers"
         data-ng-click="$root.openModal(customer);">
@@ -14,6 +19,8 @@
     </span>
   </div>
   <div class="new-area">
-    <h2>Nuevo Alta</h2>
+    <div class="title">
+      <h2>Nuevo Alta</h2>
+    </div>
   </div>  
 </div>

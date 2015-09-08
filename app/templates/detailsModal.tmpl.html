@@ -1,6 +1,21 @@
 <div class="modal-window">
-  <h2>Nombre</h2>
+  <h2 class="modal-title">Id de socio</h2>
+  <h3 data-ng-bind="$root.customerSelected.id"></h3>
+  <h2 class="modal-title">Nombre</h2>
   <h3 data-ng-bind="$root.customerSelected.name"></h3>
-  <h2>Fecha de nacimiento</h2>
+  <h2 class="modal-title">Fecha de nacimiento</h2>
   <h3 data-ng-bind="$root.customerSelected.birthdate"></h3>
+  <h2 class="modal-title">Fecha de alta</h2>
+  <h3 data-ng-bind="$root.formatStringDate($root.customerSelected.startDate)"></h3>
+  <h2 class="modal-title">Pagos realizados</h2>
+  <ul>
+    <li data-ng-repeat="payment in $root.customerSelected.payment">
+      <div class="date">
+        <span data-ng-bind="$root.formatFullDate(payment.paymentDate)"></span>
+      </div>
+      <div class="amount">
+        <span data-ng-bind="payment.amount"></span>
+      </div>
+    </li>
+  </ul>
 </div>

@@ -47,7 +47,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 3,
-      'name': 'Eustaquio Anselmo Martínez',
+      'name': 'Juan Diego De Frutos Humanes',
       'birthdate': '07/01/1985',
       'startDate': 1441643271790,
       'payment': [
@@ -75,7 +75,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 4,
-      'name': 'Daniel Hernandez Zafra',
+      'name': 'Tomás Roncero Bonaparte',
       'birthdate': '18/07/1983',
       'startDate': 1441643271790,
       'payment': [
@@ -93,7 +93,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 5,
-      'name': 'Beatriz Sanfrutos',
+      'name': 'Lady Gaga Martínez Soria',
       'birthdate': '29/09/1981',
       'startDate': 1441643271790,
       'payment': [
@@ -134,7 +134,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 7,
-      'name': 'Eustaquio Anselmo Martínez',
+      'name': 'Dora la Exploradora Fernández Pérez',
       'birthdate': '07/01/1985',
       'startDate': 1441643271790,
       'payment': [
@@ -162,7 +162,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 8,
-      'name': 'Daniel Hernandez Zafra',
+      'name': 'Jon Trojaola Crucelaegui',
       'birthdate': '18/07/1983',
       'startDate': 1441643271790,
       'payment': [
@@ -180,7 +180,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 9,
-      'name': 'Beatriz Sanfrutos',
+      'name': 'Maria del Mar Pepino Otorrinolaringologo',
       'startDate': 1441643271790,
       'birthdate': '29/09/1981',
       'payment': [
@@ -193,7 +193,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 10,
-      'name': 'Eustaquio Anselmo Martínez',
+      'name': 'Matias Prats',
       'birthdate': '07/01/1985',
       'startDate': 1441643271790,
       'payment': [
@@ -221,7 +221,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 11,
-      'name': 'Daniel Hernandez Zafra',
+      'name': 'Bruce Lee',
       'birthdate': '18/07/1983',
       'startDate': 1441643271790,
       'payment': [
@@ -239,7 +239,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 12,
-      'name': 'Beatriz Sanfrutos',
+      'name': 'Michael Jordan',
       'birthdate': '29/09/1981',
       'startDate': 1441643271790,
       'payment': [
@@ -252,7 +252,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 13,
-      'name': 'Eustaquio Anselmo Martínez',
+      'name': 'Juanito Valderrama',
       'birthdate': '07/01/1985',
       'startDate': 1441643271790,
       'payment': [
@@ -280,7 +280,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     },
     {
       'id': 14,
-      'name': 'Eustaquio Anselmo Martínez',
+      'name': 'Miguel Induráin González',
       'birthdate': '07/01/1985',
       'startDate': 1441031496628,
       'payment': [

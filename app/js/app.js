@@ -317,6 +317,8 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     $rootScope.todayDate.setHours(0);
     $rootScope.todayDate.setMinutes(0);
     $rootScope.todayDate.setSeconds(0);
+    $rootScope.showForm = false;
+    $rootScope.newCustomer = {};
 
     function formatStringDate(timestamp) {
       var _temp = new Date(timestamp);

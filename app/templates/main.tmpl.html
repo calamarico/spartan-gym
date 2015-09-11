@@ -26,8 +26,19 @@
     </span>
   </div>
   <div class="new-area">
-    <div class="title">
+    <div class="title" data-ng-click="$root.showForm = !$root.showForm">
       <h2>Nuevo Alta</h2>
+    </div>
+    <div class="form" data-ng-show="$root.showForm">
+      <form name="form" data-ng-submit="">
+        <label for="name">Nombre completo</label>
+        <input type="text" name="name" data-ng-model="$root.newCustomer.name"
+          required/>
+        <label for="startDate">Fecha de alta</label>
+        <input type="date" name="startDate" data-ng-model="$root.newCustomer.startDate" required/>
+        <label for="birthdate">Fecha de nacimiento</label>
+        <input type="date" name="birthdate" data-ng-model="root.newCustomer.birthDate" required/>
+      </form>
     </div>
   </div>  
 </div>

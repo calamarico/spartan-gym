@@ -31,13 +31,29 @@
     </div>
     <div class="form" data-ng-show="$root.showForm">
       <form name="form" data-ng-submit="">
-        <label for="name">Nombre completo</label>
-        <input type="text" name="name" data-ng-model="$root.newCustomer.name"
-          required/>
-        <label for="startDate">Fecha de alta</label>
-        <input type="date" name="startDate" data-ng-model="$root.newCustomer.startDate" required/>
-        <label for="birthdate">Fecha de nacimiento</label>
-        <input type="date" name="birthdate" data-ng-model="root.newCustomer.birthDate" required/>
+        <div class="form-section">
+          <label for="name">Nombre completo</label>
+          <input class="name-input" type="text" name="name" data-ng-model="$root.newCustomer.name"
+              required/>
+        </div>
+        <div class="form-section">
+          <label for="dni">Documento de indentidad</label>
+          <input class="dni-input" type="text" name="dni" data-ng-model="$root.newCustomer.nif"
+              required/>
+        </div>
+        <div class="form-section">
+          <label for="tel">Teléfono</label>
+          <input class="tel-input" type="tel" name="tel" data-ng-model="$root.newCustomer.telf"/>
+        </div>
+        <div class="form-section">
+          <label for="startDate">Fecha de alta</label>
+          <input type="date" name="startDate" data-ng-model="$root.newCustomer.startDate" required/>
+        </div>
+        <div class="form-section">
+          <label for="birthdate">Fecha de nacimiento</label>
+          <input type="date" name="birthdate" data-ng-model="$root.newCustomer.birthDate" required/>
+        </div>
+        <input class="button" type="submit" data-ng-click="$root.addCustomer(form)" value="Guardar"/>
       </form>
     </div>
   </div>  

@@ -308,8 +308,8 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     }
   ]
 })
-.run(['$rootScope', 'mockUsers', '$modal',
-  function($rootScope, mockUsers, $modal) {
+.run(['$rootScope', 'mockUsers', '$modal', '$timeout',
+  function($rootScope, mockUsers, $modal, $timeout) {
     $rootScope.customers = mockUsers.data;
     $rootScope.limitUsers = 3;
     $rootScope.maxUsersShowed = 15;
@@ -337,6 +337,10 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
           ('0' + _temp.getMinutes()).slice(-2);
     }
 
+    function _getNewId() {
+      return $rootScope.customers[$rootScope.customers.length - 1].id + 1;
+    }
+
     $rootScope.formatFullDate = function(timestamp) {
       return formatStringDate(timestamp) + ' - ' + formatHourDate(timestamp);
     };
@@ -353,5 +357,24 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
       return (timestamp > $rootScope.todayDate) ?
         formatHourDate(timestamp) :
         formatStringDate(timestamp);
+    };
+
+    $rootScope.addCustomer = function(form) {
+      if (!form.$valid) {
+        return;
+      }
+
+      $rootScope.customers.push({
+        id: _getNewId(),
+        name: $rootScope.newCustomer.name,
+        birthdate: formatStringDate($rootScope.newCustomer.birthDate),
+        startDate: $rootScope.newCustomer.startDate.getTime()
+      });
+
+      form.$setPristine();
+      form.$setUntouched();
+      $timeout(function() {
+        $rootScope.newCustomer = {};
+      });
     };
 }]);

@@ -6,8 +6,12 @@
     <div class="title">
       <h2>Clientes</h2>
     </div>
+    <div class="search-box">
+      <label for="search">Buscar</label>
+      <input type="text" name="search" data-ng-model="$root.search"/>  
+    </div>
     <ul>
-      <li data-ng-repeat="customer in $root.customers | limitTo: $root.limitUsers"
+      <li data-ng-repeat="customer in $root.customers | orderBy:'id':true"
         data-ng-click="$root.openModal(customer);"
         data-ng-class-odd="'color-black'"
         data-ng-class-even="'color-white'">

@@ -37,6 +37,14 @@ h3 {
     height: 100%;
     width: 100%;
     
+    .search-box {
+      text-align: center;
+
+      > label {
+        
+      }
+    }
+
     > ul {
       width: 57%;
       margin: 27px auto;
@@ -44,6 +52,9 @@ h3 {
       border: #D0D05A solid 2px;
       border-radius: 13px;
       background-color: fade(@color-black, 20%);
+      height: auto;
+      max-height: 374px;
+      overflow-y: scroll;
 
       > li {
         cursor: pointer;
@@ -66,7 +77,7 @@ h3 {
 
         > .name {
           float: left;
-          width: 573px;
+          width: 565px;
           white-space: nowrap;
           overflow: hidden;
         }
@@ -97,7 +108,7 @@ h3 {
     width: 100%;
 
     .form {
-      margin: 0px auto;
+      margin: 0 auto;
       width: 50%;
 
       .form-section {

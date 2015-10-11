@@ -308,10 +308,10 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     }
   ]
 })
-.run(['$rootScope', 'mockUsers', '$modal', '$timeout',
-  function($rootScope, mockUsers, $modal, $timeout) {
-    $rootScope.customers = mockUsers.data;
-    $rootScope.limitUsers = 3;
+.run(['$rootScope', 'mockUsers', '$modal', '$timeout', 'spartaDB', '$window',
+  function($rootScope, mockUsers, $modal, $timeout, spartaDB, $window) {
+    $rootScope.customers = [];
+    // $rootScope.customers = mockUsers.data;
     $rootScope.maxUsersShowed = 15;
     $rootScope.todayDate = new Date();
     $rootScope.todayDate.setHours(0);
@@ -319,6 +319,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     $rootScope.todayDate.setSeconds(0);
     $rootScope.showForm = false;
     $rootScope.newCustomer = {};
+    $rootScope.search = '';
 
     function formatStringDate(timestamp) {
       var _temp = new Date(timestamp);
@@ -360,16 +361,23 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     };
 
     $rootScope.addCustomer = function(form) {
+      var _customer;
+
       if (!form.$valid) {
         return;
       }
 
-      $rootScope.customers.push({
+      _customer = {
         id: _getNewId(),
         name: $rootScope.newCustomer.name,
+        nif: $rootScope.newCustomer.nif,
+        telf: $rootScope.newCustomer.telf,
         birthdate: formatStringDate($rootScope.newCustomer.birthDate),
         startDate: $rootScope.newCustomer.startDate.getTime()
-      });
+      };
+
+      $rootScope.customers.push(_customer);
+      spartaDB.addCustomer(_customer);
 
       form.$setPristine();
       form.$setUntouched();
@@ -377,4 +385,15 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
         $rootScope.newCustomer = {};
       });
     };
+
+    $rootScope.deleteCustomer = function() {
+      if ($window.confirm('¿Estás seguro de eliminar el registro?')) {
+        spartaDB.deleteCustomer($rootScope.customerSelected);
+        $rootScope.customers.length = 0;
+        spartaDB.initDB();
+        $rootScope.modalInstance.dismiss();
+      }
+    };
+
+    spartaDB.initDB();
 }]);

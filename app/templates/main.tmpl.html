@@ -11,7 +11,7 @@
       <input type="text" name="search" data-ng-model="$root.search"/>  
     </div>
     <ul>
-      <li data-ng-repeat="customer in $root.customers | orderBy:'id':true"
+      <li data-ng-repeat="customer in $root.customers | orderBy:'id':true | searchFilter:$root.search"
         data-ng-click="$root.openModal(customer);"
         data-ng-class-odd="'color-black'"
         data-ng-class-even="'color-white'">
@@ -23,11 +23,6 @@
         </div>
       </li>
     </ul>
-    <span data-ng-click="$root.limitUsers = $root.limitUsers + 3;"
-        data-ng-hide="$root.limitUsers > $root.customers.length ||
-            $root.limitUsers > $root.maxUsersShowed ">
-      Mostrar más...
-    </span>
   </div>
   <div class="new-area">
     <div class="title" data-ng-click="$root.showForm = !$root.showForm">

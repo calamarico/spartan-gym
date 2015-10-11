@@ -1,12 +1,16 @@
 <div class="modal-window">
   <h2 class="modal-title">Id de socio</h2>
-  <h3 data-ng-bind="$root.customerSelected.id"></h3>
+  <h3 class="modal-h3" data-ng-bind="$root.customerSelected.id"></h3>
   <h2 class="modal-title">Nombre</h2>
-  <h3 data-ng-bind="$root.customerSelected.name"></h3>
+  <h3 class="modal-h3" data-ng-bind="$root.customerSelected.name"></h3>
+  <h2 class="modal-title">NIF</h2>
+  <h3 class="modal-h3" data-ng-bind="$root.customerSelected.nif"></h3>
+  <h2 class="modal-title">Teléfono</h2>
+  <h3 class="modal-h3" data-ng-bind="$root.customerSelected.telf"></h3>
   <h2 class="modal-title">Fecha de nacimiento</h2>
-  <h3 data-ng-bind="$root.customerSelected.birthdate"></h3>
+  <h3 class="modal-h3" data-ng-bind="$root.customerSelected.birthdate"></h3>
   <h2 class="modal-title">Fecha de alta</h2>
-  <h3 data-ng-bind="$root.formatStringDate($root.customerSelected.startDate)"></h3>
+  <h3 class="modal-h3" data-ng-bind="$root.formatStringDate($root.customerSelected.startDate)"></h3>
   <h2 class="modal-title">Pagos realizados</h2>
   <ul>
     <li data-ng-repeat="payment in $root.customerSelected.payment">
@@ -18,4 +22,7 @@
       </div>
     </li>
   </ul>
+  <div class="options">
+    <button type="button" data-ng-click="$root.deleteCustomer()">Borrar cliente</button>
+  </div>
 </div>

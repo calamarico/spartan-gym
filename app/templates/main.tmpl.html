@@ -8,7 +8,8 @@
     </div>
     <div class="search-box">
       <label for="search">Buscar</label>
-      <input type="text" name="search" data-ng-model="$root.search"/>  
+      <input type="text" name="search" data-ng-model="$root.search"/>
+      <span>(Total {{$root.customers.length}} clientes)</span>
     </div>
     <ul>
       <li data-ng-repeat="customer in $root.customers | orderBy:'id':true | searchFilter:$root.search"

@@ -12,306 +12,9 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     });
   }
 ])
-.constant('mockUsers', {
-  data: [
-    {
-      'id': 1,
-      'name': 'Daniel Hernandez Zafra',
-      'startDate': 1441718986268,
-      'birthdate': '18/07/1983',
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 2,
-      'name': 'Beatriz Sanfrutos',
-      'startDate': 1441710886484,
-      'birthdate': '29/09/1981',
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443713742644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 3,
-      'name': 'Juan Diego De Frutos Humanes',
-      'birthdate': '07/01/1985',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        },
-        {
-          'id': 3,
-          'paymentDate': 1448901342644,
-          'amount': 30
-        },
-        {
-          'id': 4,
-          'paymentDate': 1451493342644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 4,
-      'name': 'Tomás Roncero Bonaparte',
-      'birthdate': '18/07/1983',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 5,
-      'name': 'Lady Gaga Martínez Soria',
-      'birthdate': '29/09/1981',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443713742644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 6,
-      'name': 'Eustaquio Anselmo Martínez',
-      'birthdate': '07/01/1985',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        },
-        {
-          'id': 3,
-          'paymentDate': 1448901342644,
-          'amount': 30
-        },
-        {
-          'id': 4,
-          'paymentDate': 1451493342644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 7,
-      'name': 'Dora la Exploradora Fernández Pérez',
-      'birthdate': '07/01/1985',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        },
-        {
-          'id': 3,
-          'paymentDate': 1448901342644,
-          'amount': 30
-        },
-        {
-          'id': 4,
-          'paymentDate': 1451493342644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 8,
-      'name': 'Jon Trojaola Crucelaegui',
-      'birthdate': '18/07/1983',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 9,
-      'name': 'Maria del Mar Pepino Otorrinolaringologo',
-      'startDate': 1441643271790,
-      'birthdate': '29/09/1981',
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443713742644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 10,
-      'name': 'Matias Prats',
-      'birthdate': '07/01/1985',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        },
-        {
-          'id': 3,
-          'paymentDate': 1448901342644,
-          'amount': 30
-        },
-        {
-          'id': 4,
-          'paymentDate': 1451493342644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 11,
-      'name': 'Bruce Lee',
-      'birthdate': '18/07/1983',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 12,
-      'name': 'Michael Jordan',
-      'birthdate': '29/09/1981',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443713742644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 13,
-      'name': 'Juanito Valderrama',
-      'birthdate': '07/01/1985',
-      'startDate': 1441643271790,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        },
-        {
-          'id': 3,
-          'paymentDate': 1448901342644,
-          'amount': 30
-        },
-        {
-          'id': 4,
-          'paymentDate': 1451493342644,
-          'amount': 30
-        }
-      ]
-    },
-    {
-      'id': 14,
-      'name': 'Miguel Induráin González',
-      'birthdate': '07/01/1985',
-      'startDate': 1441031496628,
-      'payment': [
-        {
-          'id': 1,
-          'paymentDate': 1443627126285,
-          'amount': 30
-        },
-        {
-          'id': 2,
-          'paymentDate': 1446222942644,
-          'amount': 30
-        },
-        {
-          'id': 3,
-          'paymentDate': 1448901342644,
-          'amount': 30
-        },
-        {
-          'id': 4,
-          'paymentDate': 1451493342644,
-          'amount': 30
-        }
-      ]
-    }
-  ]
-})
-.run(['$rootScope', 'mockUsers', '$modal', '$timeout', 'spartaDB', '$window',
-  function($rootScope, mockUsers, $modal, $timeout, spartaDB, $window) {
+.run(['$rootScope', '$modal', '$timeout', 'spartaDB', '$window',
+  function($rootScope, $modal, $timeout, spartaDB, $window) {
     $rootScope.customers = [];
-    // $rootScope.customers = mockUsers.data;
     $rootScope.maxUsersShowed = 15;
     $rootScope.todayDate = new Date();
     $rootScope.todayDate.setHours(0);
@@ -320,6 +23,10 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     $rootScope.showForm = false;
     $rootScope.newCustomer = {};
     $rootScope.search = '';
+    $rootScope.isNewPayment = false;
+    $rootScope.newPayment = {
+      paymentType: 'cash'
+    };
 
     function formatStringDate(timestamp) {
       var _temp = new Date(timestamp);
@@ -340,6 +47,11 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
 
     function _getNewId() {
       return $rootScope.customers[$rootScope.customers.length - 1].id + 1;
+    }
+
+    function _getNewPaymentId() {
+      return $rootScope.customerSelected.payment[
+        $rootScope.customerSelected.payment.length - 1].id + 1;
     }
 
     $rootScope.formatFullDate = function(timestamp) {
@@ -386,6 +98,32 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
       });
     };
 
+    $rootScope.addNewPayment = function(form) {
+      var _payment;
+
+      if (!form.$valid) {
+        return;
+      }
+
+      _payment = {
+        id: _getNewPaymentId(),
+        amount: $rootScope.newPayment.amount,
+        paymentDate: $rootScope.newPayment.paymentDate.getTime(),
+        paymentType: $rootScope.newPayment.paymentType
+      };
+
+      $rootScope.customerSelected.payment.push(_payment);
+      spartaDB.addPayment($rootScope.customerSelected);
+
+      form.$setPristine();
+      form.$setUntouched();
+      $timeout(function() {
+        $rootScope.newPayment = {
+          paymentType: 'cash'
+        };
+      });
+    };
+
     $rootScope.deleteCustomer = function() {
       if ($window.confirm('¿Estás seguro de eliminar el registro?')) {
         spartaDB.deleteCustomer($rootScope.customerSelected);
@@ -394,6 +132,8 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
         $rootScope.modalInstance.dismiss();
       }
     };
+
+    $rootScope.saveToFile = spartaDB.saveToFile;
 
     spartaDB.initDB();
 }]);

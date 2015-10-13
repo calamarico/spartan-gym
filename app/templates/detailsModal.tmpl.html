@@ -22,6 +22,26 @@
       </div>
     </li>
   </ul>
+  <div class="new-payment">
+    <span data-ng-click="$root.isNewPayment = !!$root.isNewPayment">Alta de nuevo pago</span>
+    <form name="form" data-ng-submit="">
+      <div class="form-section">
+        <label for="amount">Cantidad (en euros)</label>
+        <input class="amount-input" type="text" name="amount" data-ng-model="$root.newPayment.amount"
+            required/>
+      </div>
+      <div class="form-section">
+        <label for="paymentDate">Fecha de alta</label>
+        <input type="date" name="paymentDate" data-ng-model="$root.newPayment.paymentDate" required/>
+      </div>
+      <div class="form-section">
+        <label for="paymentType">Forma de pago</label>
+        <input type="radio" name="paymentType" data-ng-model="$root.newPayment.paymentType" value="credit">Tarjeta de crédito
+        <input type="radio" name="paymentType" data-ng-model="$root.newPayment.paymentType" value="cash" checked>Efectivo
+      </div>
+      <input class="button" type="submit" data-ng-click="$root.addNewPayment(form)" value="Guardar"/>
+    </form>
+  </div>
   <div class="options">
     <button type="button" data-ng-click="$root.deleteCustomer()">Borrar cliente</button>
   </div>

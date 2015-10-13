@@ -24,6 +24,15 @@ h3 {
   border-radius: 26px;
 }
 
+.disable-text-highlighting {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .main {
   padding: 10px 20px;
   height: 100%;
@@ -33,7 +42,17 @@ h3 {
     .transition(~"0.5s ease-out");
   }
 
+  .backup-logo {
+    background: url('../imgs/folder_remote_backup_red.png') no-repeat 0 5px;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 24px;
+    cursor: pointer;
+  }
+
   > .users-area {
+    margin-top: 55px;
     height: 100%;
     width: 100%;
     

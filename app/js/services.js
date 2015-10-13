@@ -21,6 +21,29 @@ angular.module('spartaApp')
     };
   }
 
+  function addPayment(item) {
+    var request;
+
+    tx = db.transaction('customers', 'readwrite');
+    store = tx.objectStore('customers');
+    request = store.get(item.id);
+
+    request.onerror = function(event) {
+      console.log('error:' + event);
+    };
+    request.onsuccess = function(event) {
+      var data = request.result,
+        _request;
+      
+      data.payment = item.payment;
+      _request = store.put(data);
+
+      _request.onerror = function(event) {
+        console.log('error:' + event);
+      };
+    };
+  }
+
   function addCustomer(item) {
     tx = db.transaction('customers', 'readwrite');
     store = tx.objectStore('customers');
@@ -38,7 +61,8 @@ angular.module('spartaApp')
   }
 
   function saveToFile() {
-    var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify($rootScope.customers));
+    var data = 'text/json;charset=utf-8,' +
+      encodeURIComponent(JSON.stringify($rootScope.customers));
 
     var a = document.createElement('a');
     a.href = 'data:' + data;
@@ -137,6 +161,7 @@ angular.module('spartaApp')
     initDB: initDB,
     addCustomer: addCustomer,
     deleteCustomer: deleteCustomer,
-    saveToFile: saveToFile
+    saveToFile: saveToFile,
+    addPayment: addPayment
   };
 }]);

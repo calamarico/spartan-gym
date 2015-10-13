@@ -21,7 +21,7 @@ angular.module('spartaApp')
     };
   }
 
-  function addPayment(item) {
+  function setPayment(item) {
     var request;
 
     tx = db.transaction('customers', 'readwrite');
@@ -162,6 +162,6 @@ angular.module('spartaApp')
     addCustomer: addCustomer,
     deleteCustomer: deleteCustomer,
     saveToFile: saveToFile,
-    addPayment: addPayment
+    setPayment: setPayment
   };
 }]);

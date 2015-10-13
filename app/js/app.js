@@ -113,7 +113,7 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
       };
 
       $rootScope.customerSelected.payment.push(_payment);
-      spartaDB.addPayment($rootScope.customerSelected);
+      spartaDB.setPayment($rootScope.customerSelected);
 
       form.$setPristine();
       form.$setUntouched();
@@ -130,6 +130,20 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
         $rootScope.customers.length = 0;
         spartaDB.initDB();
         $rootScope.modalInstance.dismiss();
+      }
+    };
+
+    $rootScope.deletePayment = function(payment) {
+      var _payments = [];
+
+      if ($window.confirm('Estás seguro de eliminar el pago?')) {
+        for (var i = 0; i < $rootScope.customerSelected.payment.length; i++) {
+          if (payment.id !== $rootScope.customerSelected.payment[i].id) {
+            _payments.push($rootScope.customerSelected.payment[i]);
+          }
+        }
+        $rootScope.customerSelected.payment = _payments;
+        spartaDB.setPayment($rootScope.customerSelected);
       }
     };
 

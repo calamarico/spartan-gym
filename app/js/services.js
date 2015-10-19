@@ -94,65 +94,65 @@ angular.module('spartaApp')
       store.createIndex('by_id', 'id', {unique: true});
 
       // Populate with initial data.
-      store.put({
-        'id': 1,
-        'name': 'Daniel Hernandez Zafra',
-        'startDate': 1441718986268,
-        'birthdate': '18/07/1983',
-        'payment': [
-          {
-            'id': 1,
-            'paymentDate': 1443627126285,
-            'amount': 30
-          },
-          {
-            'id': 2,
-            'paymentDate': 1446222942644,
-            'amount': 30
-          }
-        ]
-      });
-      store.put({
-        'id': 2,
-        'name': 'Beatriz Sanfrutos',
-        'startDate': 1441710886484,
-        'birthdate': '29/09/1981',
-        'payment': [
-          {
-            'id': 1,
-            'paymentDate': 1443713742644,
-            'amount': 30
-          }
-        ]
-      });
-      store.put({
-        'id': 3,
-        'name': 'Juan Diego De Frutos Humanes',
-        'birthdate': '07/01/1985',
-        'startDate': 1441643271790,
-        'payment': [
-          {
-            'id': 1,
-            'paymentDate': 1443627126285,
-            'amount': 30
-          },
-          {
-            'id': 2,
-            'paymentDate': 1446222942644,
-            'amount': 30
-          },
-          {
-            'id': 3,
-            'paymentDate': 1448901342644,
-            'amount': 30
-          },
-          {
-            'id': 4,
-            'paymentDate': 1451493342644,
-            'amount': 30
-          }
-        ]
-      });
+      // store.put({
+      //   'id': 1,
+      //   'name': 'Daniel Hernandez Zafra',
+      //   'startDate': 1441718986268,
+      //   'birthdate': '18/07/1983',
+      //   'payment': [
+      //     {
+      //       'id': 1,
+      //       'paymentDate': 1443627126285,
+      //       'amount': 30
+      //     },
+      //     {
+      //       'id': 2,
+      //       'paymentDate': 1446222942644,
+      //       'amount': 30
+      //     }
+      //   ]
+      // });
+      // store.put({
+      //   'id': 2,
+      //   'name': 'Beatriz Sanfrutos',
+      //   'startDate': 1441710886484,
+      //   'birthdate': '29/09/1981',
+      //   'payment': [
+      //     {
+      //       'id': 1,
+      //       'paymentDate': 1443713742644,
+      //       'amount': 30
+      //     }
+      //   ]
+      // });
+      // store.put({
+      //   'id': 3,
+      //   'name': 'Juan Diego De Frutos Humanes',
+      //   'birthdate': '07/01/1985',
+      //   'startDate': 1441643271790,
+      //   'payment': [
+      //     {
+      //       'id': 1,
+      //       'paymentDate': 1443627126285,
+      //       'amount': 30
+      //     },
+      //     {
+      //       'id': 2,
+      //       'paymentDate': 1446222942644,
+      //       'amount': 30
+      //     },
+      //     {
+      //       'id': 3,
+      //       'paymentDate': 1448901342644,
+      //       'amount': 30
+      //     },
+      //     {
+      //       'id': 4,
+      //       'paymentDate': 1451493342644,
+      //       'amount': 30
+      //     }
+      //   ]
+      // });
     };
   }
 

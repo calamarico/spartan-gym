@@ -114,7 +114,6 @@ module.exports = function(grunt) {
           'app/libs/angular/angular-animate.min.js',
           'app/libs/angular/angular-route.min.js',
           'app/libs/angular-ui/bootstrap/ui-bootstrap*.min.js',
-          'app/libs/digest-hud/digest-hud.js',
           'app/libs/jquery/jquery.js',
           'build/js/app.min.js'
         ],
@@ -136,6 +135,6 @@ module.exports = function(grunt) {
   grunt.registerTask('linter', ['jshint', 'lesslint']);
   grunt.registerTask('default', ['jshint', 'lesslint', 'less', 'connect',
     'watch']);
-  grunt.registerTask('build', ['linter', 'less', 'uglify', 'concat',
+  grunt.registerTask('build', ['linter', 'less', 'concat',
     'cssmin', 'copy']);
 };

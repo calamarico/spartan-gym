@@ -159,6 +159,40 @@ h3 {
   margin-right: auto;
   padding: 30px;
 
+  .new-payment {
+    width: 100%;
+
+    > span {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    > form {
+      margin: 0 auto;
+      padding: 28px;
+      width: 80%;
+
+      .form-section {
+        display: inline-block;
+        width: 100%;
+        padding: 3px;
+
+        label {
+          min-width: 133px;
+        }
+
+        .amount-input {
+           width: 65px;
+        }
+
+        .paymentdate-input {
+          width: 200px;
+        }
+      }
+    }
+  }
+
   .modal-title {
     padding: 0;
     color: red;
@@ -178,6 +212,8 @@ h3 {
     border: #D0D05A solid 2px;
     border-radius: 13px;
     background-color: fade(@color-black, 20%);
+    max-height: 218px;
+    overflow-y: scroll;
 
     > li {
       height: 29px;
@@ -210,7 +246,7 @@ h3 {
   }
 
   .options {
-    width: 200px;
+    width: 113px;
     margin: 2px auto;
     height: auto;
 

@@ -21,10 +21,13 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     $rootScope.todayDate.setMinutes(0);
     $rootScope.todayDate.setSeconds(0);
     $rootScope.showForm = false;
-    $rootScope.newCustomer = {};
+    $rootScope.newCustomer = {
+      startDate: new Date()
+    };
     $rootScope.search = '';
     $rootScope.isNewPayment = false;
     $rootScope.newPayment = {
+      paymentDate: new Date(),
       paymentType: 'cash'
     };
 
@@ -46,12 +49,21 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     }
 
     function _getNewId() {
-      return $rootScope.customers[$rootScope.customers.length - 1].id + 1;
+      if ($rootScope.customers.length > 0) {
+        return $rootScope.customers[$rootScope.customers.length - 1].id + 1;
+      } else {
+        return 1;
+      }
     }
 
     function _getNewPaymentId() {
-      return $rootScope.customerSelected.payment[
-        $rootScope.customerSelected.payment.length - 1].id + 1;
+      if ($rootScope.customerSelected.payment === undefined ||
+          $rootScope.customerSelected.payment.length === 0) {
+        return 1;
+      } else {
+        return $rootScope.customerSelected.payment[
+          $rootScope.customerSelected.payment.length - 1].id + 1;
+      }
     }
 
     $rootScope.formatFullDate = function(timestamp) {
@@ -73,11 +85,15 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     };
 
     $rootScope.addCustomer = function(form) {
-      var _customer;
+      var _customer, _currentDate;
 
       if (!form.$valid) {
         return;
       }
+
+      _currentDate = new Date();
+      $rootScope.newCustomer.startDate.setHours(_currentDate.getHours());
+      $rootScope.newCustomer.startDate.setMinutes(_currentDate.getMinutes());
 
       _customer = {
         id: _getNewId(),
@@ -85,7 +101,8 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
         nif: $rootScope.newCustomer.nif,
         telf: $rootScope.newCustomer.telf,
         birthdate: formatStringDate($rootScope.newCustomer.birthDate),
-        startDate: $rootScope.newCustomer.startDate.getTime()
+        startDate: $rootScope.newCustomer.startDate.getTime(),
+        payment: []
       };
 
       $rootScope.customers.push(_customer);
@@ -94,7 +111,9 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
       form.$setPristine();
       form.$setUntouched();
       $timeout(function() {
-        $rootScope.newCustomer = {};
+        $rootScope.newCustomer = {
+          startDate: new Date()
+        };
       });
     };
 
@@ -118,7 +137,9 @@ angular.module('spartaApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
       form.$setPristine();
       form.$setUntouched();
       $timeout(function() {
+        $rootScope.isNewPayment = false;
         $rootScope.newPayment = {
+          paymentDate: new Date(),
           paymentType: 'cash'
         };
       });

@@ -1,0 +1,17 @@
+- Añadir dni, telefono
+- pagos checkbox (TPV, efectivo)
+- dar de alta un pago y dar de baja
+- busquedas
+- gestion de datos (indexdb?)
+120
+
+Mejoras:
+- Notificaciones de pago depués de 45 días.
+- calendario para los pagos 
+- foto
++30
+
+
+Miercoles 7 Octurbre.
+
+

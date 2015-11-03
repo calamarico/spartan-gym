@@ -1,0 +1,56 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <input id="getfile" type="file" mutliple="true" name="archivos" />
+    <br>
+    <button onclick="load()">Hacer la carga en bbdd</button>
+    <script src="libs/jquery/jquery-1.11.3.min.js"></script>
+    <script>
+        function load() {
+          var file = document.getElementById('getfile').files[0];
+          var reader = new FileReader();
+          reader.readAsText(file, "UTF-8");
+          reader.onload = function (evt) {
+              initDB(evt.target.result);
+          }
+          reader.onerror = function (evt) {
+              alert('Error al leer el archivo, consulta al calamar');
+          }
+        }
+
+        var initDB = function(value) {
+          var request;
+          request = window.indexedDB.open('SpartaDB');
+
+          request.onerror = function(event) {
+            alert('Error al abrir la base de datos, consulte al calamar');
+          };
+
+          request.onsuccess = function(event) {
+            var objects = JSON.parse(value);
+            db = request.result;
+            tx = db.transaction('customers', 'readwrite');
+            store = tx.objectStore('customers');
+            for (var i = 0; i < objects.length; i++) {
+              objects[i].$$hashkey && delete objects[i].$$hashkey;
+              store.put(objects[i]);
+            }
+          };
+
+          request.onupgradeneeded = function() {
+            // The database did not previously exist, so create object
+            // stores and indexes.
+            db = request.result;
+            store = db.createObjectStore('customers', {keyPath: 'id'});
+            store.createIndex('by_id', 'id', {unique: true});
+          };
+        }
+    </script>
+</body>
+</html>
